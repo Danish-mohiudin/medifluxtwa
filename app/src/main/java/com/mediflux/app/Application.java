@@ -17,13 +17,15 @@ package com.mediflux.app;
 
 
 
+import android.util.Log;
+
 public class Application extends android.app.Application {
 
-  
+  private static final String TAG = "MediFlux";
 
   @Override
   public void onCreate() {
       super.onCreate();
-      
+      Log.d(TAG, "Application initialized");
   }
 }
