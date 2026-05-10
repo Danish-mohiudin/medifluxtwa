@@ -1,0 +1,16 @@
+# Keystores (CRITICAL - DO NOT COMMIT)
+*.keystore
+*.jks
+
+# Bubblewrap temporary files
+.bubblewrap/
+build/
+app/build/
+
+# IDE files
+.idea/
+*.iml
+
+# Node/npm
+node_modules/
+npm-debug.log
