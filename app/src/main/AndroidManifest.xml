@@ -164,6 +164,12 @@
         <activity android:name="com.google.androidbrowserhelper.trusted.WebViewFallbackActivity"
             android:configChanges="orientation|screenSize" />
 
+        <!-- Handles the Share App launcher shortcut -->
+        <activity
+            android:name=".ShareActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoDisplay" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="@string/providerAuthority"

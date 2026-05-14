@@ -15,7 +15,9 @@
      limitations under the License.
 -->
 <resources>
-  
+
+  <string name="shortcut_share_short">Share App</string>
+  <string name="shortcut_share_long">Share MediFlux</string>
 
   <!--
     The "fullscreen" and "fullscreen-sticky" TWA manifest values correspond to "immersive" and "sticky-immersive"
