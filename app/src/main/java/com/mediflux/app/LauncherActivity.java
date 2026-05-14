@@ -19,14 +19,21 @@ import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
-
+import com.google.android.play.core.review.ReviewInfo;
+import com.google.android.play.core.review.ReviewManager;
+import com.google.android.play.core.review.ReviewManagerFactory;
+import com.google.android.gms.tasks.Task;
 
 public class LauncherActivity
         extends com.google.androidbrowserhelper.trusted.LauncherActivity {
 
     private static final String TAG = "MediFlux";
+    // Delay before showing the review prompt (5 seconds after launch)
+    private static final long REVIEW_DELAY_MS = 5000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +47,37 @@ public class LauncherActivity
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
         }
         Log.d(TAG, "LauncherActivity started, SDK=" + Build.VERSION.SDK_INT);
+
+        // Trigger in-app review after a short delay so the app has time to load
+        new Handler(Looper.getMainLooper()).postDelayed(this::requestInAppReview, REVIEW_DELAY_MS);
+    }
+
+    /**
+     * Requests the Play Store in-app review dialog.
+     * Google controls whether the dialog actually shows based on review quotas,
+     * so it won't appear on every launch.
+     */
+    private void requestInAppReview() {
+        ReviewManager manager = ReviewManagerFactory.create(this);
+        Task<ReviewInfo> request = manager.requestReviewFlow();
+        request.addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                ReviewInfo reviewInfo = task.getResult();
+                Task<Void> flow = manager.launchReviewFlow(this, reviewInfo);
+                flow.addOnCompleteListener(flowTask -> {
+                    // Flow finished — whether the user rated or dismissed, continue normally
+                    Log.d(TAG, "In-app review flow completed");
+                });
+            } else {
+                // Not a critical failure — review just won't show
+                Log.w(TAG, "In-app review request failed: " + task.getException());
+            }
+        });
     }
 
     @Override
     protected Uri getLaunchingUrl() {
-        // Get the original launch Url.
         Uri uri = super.getLaunchingUrl();
-
-        
-
         return uri;
     }
 }
