@@ -11,16 +11,4 @@
         <intent android:action='android.intent.action.MAIN' android:targetPackage='com.mediflux.app' android:targetClass='com.mediflux.app.LauncherActivity' android:data='https://app.mediflux.in/sales/add' />
         <categories android:name='android.intent.category.LAUNCHER' />
     </shortcut>
-    <shortcut
-        android:shortcutId='shortcut_share'
-        android:enabled='true'
-        android:icon='@drawable/ic_share'
-        android:shortcutShortLabel='@string/shortcut_share_short'
-        android:shortcutLongLabel='@string/shortcut_share_long'>
-        <intent
-            android:action='android.intent.action.MAIN'
-            android:targetPackage='com.mediflux.app'
-            android:targetClass='com.mediflux.app.ShareActivity' />
-        <categories android:name='android.intent.category.DEFAULT' />
-    </shortcut>
 </shortcuts>
