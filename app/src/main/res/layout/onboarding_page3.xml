@@ -1,256 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Screen 3: Get Started / Trust Builder -->
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="#F9FAFB">
+    android:layout_height="match_parent">
 
+    <!-- Teal gradient full background -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_teal_gradient"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Decorative circles -->
+    <View
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:background="@drawable/circle_teal_light"
+        android:layout_marginStart="-60dp"
+        android:layout_marginTop="-60dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:background="@drawable/circle_teal_light"
+        android:layout_marginEnd="-30dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- India map illustration -->
+    <ImageView
+        android:id="@+id/illustration3"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_onboarding_india"
+        android:contentDescription="India map"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/whiteCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- WHITE CARD — same 52% height, no skip on last screen -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="500dp">
+        android:id="@+id/whiteCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_white_rounded_top"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.52">
 
-        <!-- Teal hero with India map illustration -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/heroCard3"
+        <!-- Content -->
+        <ScrollView
+            android:id="@+id/scrollContent3"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:cardBackgroundColor="#006666"
-            app:cardCornerRadius="0dp"
-            app:cardElevation="0dp"
+            android:overScrollMode="never"
+            android:scrollbars="none"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/dotsRow"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/contentCard3"
-            app:layout_constraintHeight_percent="0.48">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <!-- Decorative circles -->
-                <View
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:background="@drawable/circle_teal_light"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginTop="-60dp"
-                    android:layout_marginStart="-60dp"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"/>
-
-                <View
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:background="@drawable/circle_teal_light"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginBottom="-40dp"
-                    android:layout_marginEnd="-40dp"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"/>
-
-                <!-- India / network illustration -->
-                <ImageView
-                    android:id="@+id/illustration3"
-                    android:layout_width="180dp"
-                    android:layout_height="180dp"
-                    android:src="@drawable/ic_onboarding_india"
-                    android:contentDescription="India map illustration"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Content card -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/contentCard3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="#FFFFFF"
-            app:cardCornerRadius="28dp"
-            app:cardElevation="8dp"
-            android:layout_marginTop="-28dp"
-            app:layout_constraintTop_toBottomOf="@id/heroCard3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="28dp">
+                android:paddingStart="28dp"
+                android:paddingEnd="28dp"
+                android:paddingTop="28dp"
+                android:paddingBottom="8dp">
 
-                <!-- Headline -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TRUSTED ACROSS INDIA"
+                    android:textColor="#008080"
+                    android:textSize="11sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.10"
+                    android:layout_marginBottom="8dp"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Trusted by Smart Pharmacies Across India"
-                    android:textColor="#0D1B2A"
+                    android:text="Smart Pharmacies\nChoose MediFlux"
+                    android:textColor="#0D2B2B"
                     android:textSize="26sp"
                     android:fontFamily="sans-serif-medium"
-                    android:lineSpacingMultiplier="1.2"
-                    android:layout_marginBottom="12dp" />
+                    android:lineSpacingMultiplier="1.15"
+                    android:layout_marginBottom="10dp"/>
 
-                <!-- Subtext -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Join thousands of pharmacies already running smarter with MediFlux."
-                    android:textColor="#5A6A7A"
-                    android:textSize="14sp"
+                    android:text="Secure data, multi-store support, and AI-powered assistance — built for the way Indian pharmacies work."
+                    android:textColor="#4A6060"
+                    android:textSize="13sp"
                     android:fontFamily="sans-serif"
-                    android:lineSpacingMultiplier="1.5"
-                    android:layout_marginBottom="24dp" />
+                    android:lineSpacingMultiplier="1.55"
+                    android:layout_marginBottom="16dp"/>
 
-                <!-- Trust badges row 1 -->
+                <!-- Stats row -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginBottom="12dp">
 
-                    <!-- Secure Data -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:background="@drawable/trust_badge_bg"
-                        android:padding="14dp"
-                        android:layout_marginEnd="8dp">
-
-                        <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:src="@drawable/ic_trust_secure"
-                            android:contentDescription="Secure data"
-                            android:layout_marginBottom="6dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Secure Data"
-                            android:textColor="#0D1B2A"
-                            android:textSize="12sp"
-                            android:fontFamily="sans-serif-medium"
-                            android:gravity="center" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:background="@drawable/stat_card_bg" android:padding="12dp" android:layout_marginEnd="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10,000+" android:textColor="#008080" android:textSize="18sp" android:fontFamily="sans-serif-medium"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pharmacies" android:textColor="#5A7070" android:textSize="11sp" android:gravity="center"/>
                     </LinearLayout>
 
-                    <!-- Multi-store -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:background="@drawable/trust_badge_bg"
-                        android:padding="14dp"
-                        android:layout_marginStart="8dp">
-
-                        <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:src="@drawable/ic_trust_multistore"
-                            android:contentDescription="Multi-store support"
-                            android:layout_marginBottom="6dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Multi-Store"
-                            android:textColor="#0D1B2A"
-                            android:textSize="12sp"
-                            android:fontFamily="sans-serif-medium"
-                            android:gravity="center" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:background="@drawable/stat_card_bg" android:padding="12dp" android:layout_marginEnd="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="28+" android:textColor="#008080" android:textSize="18sp" android:fontFamily="sans-serif-medium"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="States" android:textColor="#5A7070" android:textSize="11sp" android:gravity="center"/>
                     </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:background="@drawable/stat_card_bg" android:padding="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4.8★" android:textColor="#008080" android:textSize="18sp" android:fontFamily="sans-serif-medium"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rating" android:textColor="#5A7070" android:textSize="11sp" android:gravity="center"/>
+                    </LinearLayout>
+
                 </LinearLayout>
 
-                <!-- Trust badges row 2 -->
+                <!-- Trust badges -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="24dp">
+                    android:orientation="horizontal">
 
-                    <!-- AI Powered -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:background="@drawable/trust_badge_bg"
-                        android:padding="14dp"
-                        android:layout_marginEnd="8dp">
-
-                        <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:src="@drawable/ic_trust_ai"
-                            android:contentDescription="AI powered"
-                            android:layout_marginBottom="6dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="AI-Powered"
-                            android:textColor="#0D1B2A"
-                            android:textSize="12sp"
-                            android:fontFamily="sans-serif-medium"
-                            android:gravity="center" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/feature_card_bg" android:padding="10dp" android:layout_marginEnd="8dp">
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_trust_secure" android:contentDescription="Secure" android:layout_marginEnd="8dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Secure Data" android:textColor="#0D2B2B" android:textSize="12sp" android:fontFamily="sans-serif-medium"/>
                     </LinearLayout>
 
-                    <!-- Made for India -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:background="@drawable/trust_badge_bg"
-                        android:padding="14dp"
-                        android:layout_marginStart="8dp">
-
-                        <ImageView
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:src="@drawable/ic_trust_india"
-                            android:contentDescription="Made for India"
-                            android:layout_marginBottom="6dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Made for India"
-                            android:textColor="#0D1B2A"
-                            android:textSize="12sp"
-                            android:fontFamily="sans-serif-medium"
-                            android:gravity="center" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/feature_card_bg" android:padding="10dp">
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_trust_ai" android:contentDescription="AI" android:layout_marginEnd="8dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AI-Powered" android:textColor="#0D2B2B" android:textSize="12sp" android:fontFamily="sans-serif-medium"/>
                     </LinearLayout>
+
                 </LinearLayout>
 
-                <!-- Warm CTA text -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Your pharmacy deserves the best tools. Let's get started."
-                    android:textColor="#008080"
-                    android:textSize="14sp"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center"
-                    android:lineSpacingMultiplier="1.4" />
-
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </ScrollView>
+
+        <!-- Dots row -->
+        <LinearLayout
+            android:id="@+id/dotsRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toTopOf="@id/btnNext"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <ImageView android:id="@+id/dot0" android:layout_width="8dp"  android:layout_height="8dp" android:layout_marginEnd="5dp" android:src="@drawable/dot_inactive"/>
+            <ImageView android:id="@+id/dot1" android:layout_width="8dp"  android:layout_height="8dp" android:layout_marginEnd="5dp" android:src="@drawable/dot_inactive"/>
+            <ImageView android:id="@+id/dot2" android:layout_width="24dp" android:layout_height="8dp" android:src="@drawable/dot_active"/>
+        </LinearLayout>
+
+        <!-- Get Started button -->
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="28dp"
+            android:text="Get Started"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium"
+            android:background="@drawable/btn_teal_rounded"
+            android:stateListAnimator="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
