@@ -39,12 +39,12 @@ public class LauncherActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Check first-run before super.onCreate() so the TWA never starts
+        // Check first-run — show onboarding, then come back here to launch the TWA
         SharedPreferences prefs = getSharedPreferences(
             OnboardingActivity.PREFS_NAME, MODE_PRIVATE);
         if (!prefs.getBoolean(OnboardingActivity.KEY_ONBOARDING_DONE, false)) {
-            startActivity(new Intent(this, OnboardingActivity.class));
-            finish();
+            startActivityForResult(new Intent(this, OnboardingActivity.class), 1001);
+            // Don't call super or finish — wait for onboarding to return
             return;
         }
 
@@ -68,6 +68,15 @@ public class LauncherActivity
      * Google controls whether the dialog actually shows based on review quotas,
      * so it won't appear on every launch.
      */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1001) {
+            // Onboarding done — now do the normal TWA launch
+            recreate();
+        }
+    }
+
     private void requestInAppReview() {
         ReviewManager manager = ReviewManagerFactory.create(this);
         Task<ReviewInfo> request = manager.requestReviewFlow();

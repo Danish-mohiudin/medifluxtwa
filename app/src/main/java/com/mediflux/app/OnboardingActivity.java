@@ -1,6 +1,5 @@
 package com.mediflux.app;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -80,7 +79,7 @@ public class OnboardingActivity extends AppCompatActivity {
     private void finishOnboarding() {
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         prefs.edit().putBoolean(KEY_ONBOARDING_DONE, true).apply();
-        startActivity(new Intent(this, LauncherActivity.class));
+        // Just finish — LauncherActivity is waiting in the back stack and will resume
         finish();
     }
 }
