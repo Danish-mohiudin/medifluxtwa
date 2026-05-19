@@ -1,0 +1,28 @@
+# Build outputs
+*.apk
+*.aab
+*.idsig
+build/
+app/build/
+
+# Keystores (CRITICAL - never commit)
+*.keystore
+*.jks
+
+# Gradle
+.gradle/
+gradle/wrapper/gradle-wrapper.jar
+local.properties
+
+# IDE
+.idea/
+*.iml
+*.swp
+
+# Bubblewrap
+.bubblewrap/
+node_modules/
+npm-debug.log
+
+# Misc
+manifest-checksum.txt
