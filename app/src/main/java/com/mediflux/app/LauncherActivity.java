@@ -15,6 +15,8 @@
  */
 package com.mediflux.app;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Build;
@@ -37,6 +39,15 @@ public class LauncherActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Check first-run before super.onCreate() so the TWA never starts
+        SharedPreferences prefs = getSharedPreferences(
+            OnboardingActivity.PREFS_NAME, MODE_PRIVATE);
+        if (!prefs.getBoolean(OnboardingActivity.KEY_ONBOARDING_DONE, false)) {
+            startActivity(new Intent(this, OnboardingActivity.class));
+            finish();
+            return;
+        }
+
         super.onCreate(savedInstanceState);
         // Lock portrait on Android O (API 26) and above.
         // On older versions, transparent background + fixed orientation causes a crash,

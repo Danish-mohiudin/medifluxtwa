@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Heart with India flag colors -->
+    <path android:fillColor="#008080"
+        android:pathData="M20.84,4.61a5.5,5.5 0,0 0,-7.78,0L12,5.67l-1.06,-1.06a5.5,5.5 0,0 0,-7.78,7.78l1.06,1.06L12,21.23l7.78,-7.78 1.06,-1.06a5.5,5.5 0,0 0,0,-7.78z"/>
+    <path android:fillColor="#FFFFFF" android:fillAlpha="0.4"
+        android:pathData="M12,8 L13.5,11 L17,11.5 L14.5,14 L15,17.5 L12,16 L9,17.5 L9.5,14 L7,11.5 L10.5,11 Z"/>
+</vector>

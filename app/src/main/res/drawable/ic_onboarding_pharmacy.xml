@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Background circle -->
+    <path android:fillColor="#1AFFFFFF"
+        android:pathData="M100,15 A85,85 0 1,0 100,185 A85,85 0 1,0 100,15 Z"/>
+
+    <!-- Shelf back panel -->
+    <path android:fillColor="#FFFFFF" android:fillAlpha="0.25"
+        android:pathData="M40,60 L160,60 L160,120 L40,120 Z"/>
+
+    <!-- Shelf line 1 -->
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="2" android:fillColor="#00000000"
+        android:pathData="M40,80 L160,80"/>
+    <!-- Shelf line 2 -->
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="2" android:fillColor="#00000000"
+        android:pathData="M40,100 L160,100"/>
+
+    <!-- Medicine boxes shelf 1 — each box: M x,y h14 v15 h-14 Z -->
+    <path android:fillColor="#FFFFFF"   android:pathData="M50,63 h14 v15 h-14 Z"/>
+    <path android:fillColor="#80E0E0"   android:pathData="M68,63 h14 v15 h-14 Z"/>
+    <path android:fillColor="#FFFFFF"   android:pathData="M86,63 h14 v15 h-14 Z"/>
+    <path android:fillColor="#80E0E0"   android:pathData="M104,63 h14 v15 h-14 Z"/>
+    <path android:fillColor="#FFFFFF"   android:pathData="M122,63 h14 v15 h-14 Z"/>
+    <path android:fillColor="#80E0E0"   android:pathData="M140,63 h14 v15 h-14 Z"/>
+
+    <!-- Medicine boxes shelf 2 -->
+    <path android:fillColor="#80E0E0"   android:pathData="M50,83 h14 v15 h-14 Z"/>
+    <path android:fillColor="#FFFFFF"   android:pathData="M68,83 h14 v15 h-14 Z"/>
+    <path android:fillColor="#80E0E0"   android:pathData="M86,83 h14 v15 h-14 Z"/>
+    <path android:fillColor="#FFFFFF"   android:pathData="M104,83 h14 v15 h-14 Z"/>
+    <path android:fillColor="#80E0E0"   android:pathData="M122,83 h14 v15 h-14 Z"/>
+
+    <!-- Counter -->
+    <path android:fillColor="#FFFFFF" android:fillAlpha="0.9"
+        android:pathData="M30,125 h140 v30 h-140 Z"/>
+    <path android:fillColor="#008080" android:fillAlpha="0.3"
+        android:pathData="M30,125 h140 v5 h-140 Z"/>
+
+    <!-- Pharmacist body -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M95,105 Q100,100 105,105 L110,125 L90,125 Z"/>
+
+    <!-- Pharmacist head -->
+    <path android:fillColor="#FFDAB9"
+        android:pathData="M92,95 A8,8 0 1,0 108,95 A8,8 0 1,0 92,95 Z"/>
+
+    <!-- Coat cross -->
+    <path android:strokeColor="#008080" android:strokeWidth="2" android:fillColor="#00000000"
+        android:pathData="M97,110 L103,110 M100,107 L100,113"/>
+
+    <!-- Tablet in hand -->
+    <path android:fillColor="#006666"
+        android:pathData="M108,115 h10 v13 h-10 Z"/>
+    <path android:fillColor="#80E0E0"
+        android:pathData="M109,116 h8 v10 h-8 Z"/>
+
+    <!-- Plus sign on counter -->
+    <path android:strokeColor="#008080" android:strokeWidth="3" android:fillColor="#00000000"
+        android:pathData="M60,137 L70,137 M65,132 L65,142"/>
+
+</vector>

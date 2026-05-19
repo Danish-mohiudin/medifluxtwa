@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Bar chart: 3 bars as paths (M x,y h w v h h -w Z) -->
+    <!-- Left bar: x=4, y=13, w=4, h=8 -->
+    <path android:fillColor="#008080"
+        android:pathData="M4,13 h4 v8 h-4 Z"/>
+    <!-- Middle bar: x=10, y=3, w=4, h=18 -->
+    <path android:fillColor="#008080"
+        android:pathData="M10,3 h4 v18 h-4 Z"/>
+    <!-- Right bar: x=16, y=9, w=4, h=12 -->
+    <path android:fillColor="#008080"
+        android:pathData="M16,9 h4 v12 h-4 Z"/>
+</vector>

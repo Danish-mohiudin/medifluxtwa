@@ -170,6 +170,13 @@
             android:exported="false"
             android:theme="@android:style/Theme.NoDisplay" />
 
+        <!-- Onboarding screens shown to first-time users -->
+        <activity
+            android:name=".OnboardingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Onboarding"
+            android:screenOrientation="portrait" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="@string/providerAuthority"

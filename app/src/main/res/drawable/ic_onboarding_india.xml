@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- India map outline with network nodes -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="180dp"
+    android:height="180dp"
+    android:viewportWidth="180"
+    android:viewportHeight="180">
+
+    <!-- Background circle -->
+    <path android:fillColor="#1AFFFFFF"
+        android:pathData="M90,90 m-80,0 a80,80 0 1,0 160,0 a80,80 0 1,0 -160,0"/>
+
+    <!-- Simplified India map shape -->
+    <path android:fillColor="#FFFFFF" android:fillAlpha="0.25"
+        android:pathData="M90,30 L110,35 L125,50 L130,65 L125,80 L130,95 L120,115 L110,130 L100,145 L90,150 L80,145 L70,130 L60,115 L50,95 L55,80 L50,65 L55,50 L70,35 Z"/>
+
+    <!-- India map outline -->
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="2" android:fillColor="#00000000"
+        android:pathData="M90,30 L110,35 L125,50 L130,65 L125,80 L130,95 L120,115 L110,130 L100,145 L90,150 L80,145 L70,130 L60,115 L50,95 L55,80 L50,65 L55,50 L70,35 Z"/>
+
+    <!-- Network connection lines -->
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="1" android:fillColor="#00000000"
+        android:strokeAlpha="0.5"
+        android:pathData="M90,60 L70,80 M90,60 L110,80 M70,80 L90,100 M110,80 L90,100 M90,100 L80,120 M90,100 L100,120"/>
+
+    <!-- Network nodes (pharmacy locations) -->
+    <!-- Delhi area -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M90,58 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0"/>
+    <path android:fillColor="#008080"
+        android:pathData="M90,58 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0"/>
+
+    <!-- Mumbai area -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M68,100 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0"/>
+    <path android:fillColor="#008080"
+        android:pathData="M68,100 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0"/>
+
+    <!-- Bangalore area -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M85,120 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0"/>
+    <path android:fillColor="#008080"
+        android:pathData="M85,120 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0"/>
+
+    <!-- Kolkata area -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M112,85 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0"/>
+    <path android:fillColor="#008080"
+        android:pathData="M112,85 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0"/>
+
+    <!-- Chennai area -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M100,118 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0"/>
+    <path android:fillColor="#008080"
+        android:pathData="M100,118 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0"/>
+
+    <!-- Pulse rings on main node -->
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="1.5" android:fillColor="#00000000"
+        android:strokeAlpha="0.4"
+        android:pathData="M90,58 m-10,0 a10,10 0 1,0 20,0 a10,10 0 1,0 -20,0"/>
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="1" android:fillColor="#00000000"
+        android:strokeAlpha="0.2"
+        android:pathData="M90,58 m-16,0 a16,16 0 1,0 32,0 a16,16 0 1,0 -32,0"/>
+
+</vector>

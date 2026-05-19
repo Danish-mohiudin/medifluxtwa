@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Screen 3: Get Started / Trust Builder -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F9FAFB">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="500dp">
+
+        <!-- Teal hero with India map illustration -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/heroCard3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardBackgroundColor="#006666"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/contentCard3"
+            app:layout_constraintHeight_percent="0.48">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Decorative circles -->
+                <View
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/circle_teal_light"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="-60dp"
+                    android:layout_marginStart="-60dp"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"/>
+
+                <View
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/circle_teal_light"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginBottom="-40dp"
+                    android:layout_marginEnd="-40dp"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"/>
+
+                <!-- India / network illustration -->
+                <ImageView
+                    android:id="@+id/illustration3"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:src="@drawable/ic_onboarding_india"
+                    android:contentDescription="India map illustration"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Content card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/contentCard3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="8dp"
+            android:layout_marginTop="-28dp"
+            app:layout_constraintTop_toBottomOf="@id/heroCard3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="28dp">
+
+                <!-- Headline -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Trusted by Smart Pharmacies Across India"
+                    android:textColor="#0D1B2A"
+                    android:textSize="26sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:lineSpacingMultiplier="1.2"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Subtext -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Join thousands of pharmacies already running smarter with MediFlux."
+                    android:textColor="#5A6A7A"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingMultiplier="1.5"
+                    android:layout_marginBottom="24dp" />
+
+                <!-- Trust badges row 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <!-- Secure Data -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/trust_badge_bg"
+                        android:padding="14dp"
+                        android:layout_marginEnd="8dp">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_trust_secure"
+                            android:contentDescription="Secure data"
+                            android:layout_marginBottom="6dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Secure Data"
+                            android:textColor="#0D1B2A"
+                            android:textSize="12sp"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                    <!-- Multi-store -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/trust_badge_bg"
+                        android:padding="14dp"
+                        android:layout_marginStart="8dp">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_trust_multistore"
+                            android:contentDescription="Multi-store support"
+                            android:layout_marginBottom="6dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Multi-Store"
+                            android:textColor="#0D1B2A"
+                            android:textSize="12sp"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Trust badges row 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="24dp">
+
+                    <!-- AI Powered -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/trust_badge_bg"
+                        android:padding="14dp"
+                        android:layout_marginEnd="8dp">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_trust_ai"
+                            android:contentDescription="AI powered"
+                            android:layout_marginBottom="6dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="AI-Powered"
+                            android:textColor="#0D1B2A"
+                            android:textSize="12sp"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                    <!-- Made for India -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/trust_badge_bg"
+                        android:padding="14dp"
+                        android:layout_marginStart="8dp">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_trust_india"
+                            android:contentDescription="Made for India"
+                            android:layout_marginBottom="6dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Made for India"
+                            android:textColor="#0D1B2A"
+                            android:textSize="12sp"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Warm CTA text -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your pharmacy deserves the best tools. Let's get started."
+                    android:textColor="#008080"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.4" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

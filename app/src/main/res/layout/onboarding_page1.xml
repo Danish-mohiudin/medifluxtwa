@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Screen 1: Welcome / What is MediFlux -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F9FAFB">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="500dp">
+
+        <!-- Teal hero card with illustration -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/heroCard"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardBackgroundColor="#008080"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/contentCard"
+            app:layout_constraintHeight_percent="0.52">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Decorative circle top-right -->
+                <View
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/circle_teal_light"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="-40dp"
+                    android:layout_marginEnd="-40dp"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"/>
+
+                <!-- Decorative circle bottom-left -->
+                <View
+                    android:id="@+id/circleBottomLeft"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/circle_teal_light"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginBottom="-30dp"
+                    android:layout_marginStart="-30dp"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"/>
+
+                <!-- Pharmacy illustration -->
+                <ImageView
+                    android:id="@+id/illustration"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:src="@drawable/ic_onboarding_pharmacy"
+                    android:contentDescription="Pharmacy illustration"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Content card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/contentCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="8dp"
+            android:layout_marginTop="-28dp"
+            app:layout_constraintTop_toBottomOf="@id/heroCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="28dp">
+
+                <!-- Tagline chip -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Har smart pharmacy ki pehchaan!"
+                    android:textColor="#008080"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:background="@drawable/chip_teal_outline"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Headline -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Pharmacy,\nSmarter"
+                    android:textColor="#0D1B2A"
+                    android:textSize="28sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:lineSpacingMultiplier="1.15"
+                    android:layout_marginBottom="14dp" />
+
+                <!-- Subtext -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MediFlux is an all-in-one pharmacy management app built for Indian pharmacies. Manage sales, purchases, inventory, and billing — all from one place."
+                    android:textColor="#5A6A7A"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif"
+                    android:lineSpacingMultiplier="1.5"
+                    android:layout_marginBottom="24dp" />
+
+                <!-- Feature pills row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="start">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sales"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:background="@drawable/pill_teal"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Inventory"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:background="@drawable/pill_teal"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Billing"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:background="@drawable/pill_teal"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
